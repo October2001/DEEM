@@ -4,47 +4,11 @@
 
 # DEEM: Diffusion models serve as the eyes of large language models for image perception
 
-<div align="center">
-<br>
-<a href="https://scholar.google.com/citations?user=phg8yxoAAAAJ&hl=zh-CN&oi=ao">Run Luo</a><sup><span>1,2*</span></sup>, 
-<a href="https://scholar.google.com/citations?user=juR8ZS4AAAAJ&hl=zh-CN">Yunshui Li</a><sup><span>1,2*</span></sup>,
-<a href="https://github.com/October2001">Longze Chen</a><sup><span>1,2*</span></sup>,
-<a>Wanwei He</a><sup><span>1,2</span></sup>,
-<a>Ting-En Lin</a><sup><span>5</span></sup>,
-<a>Ziqiang Liu<sup><span>1,2</span></sup>,
-<a>Lei Zhang<sup><span>1,2</span></sup>
-<br>
-<a>Zikai Song<sup><span>6</span></sup>,
-<a>Xiaobo Xia<sup><span>4</span></sup>,
-<a>Tongliang Liu<sup><span>4</span></sup>,
-<a>Min Yang<sup><span>1,2🌟</span></sup>,
-<a>Binyuan Hui<sup><span>3🌟</span></sup>
-<br>
-    
-\* Equal contribution 🌟 Corresponding author
-
-<sup>1</sup> Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences<br>
-<sup>2</sup> University of Chinese Academy of Sciences<br>
-<sup>3</sup> Alibaba Group
-<sup>4</sup> The University of Sydney 
-<sup>5</sup> Tsinghua University
-<sup>6</sup> HUST<br>
-    
-![Multi-Modal](https://img.shields.io/badge/Task-Multi--Modal-red) <a href='https://arxiv.org/pdf/2405.15232'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://huggingface.co/collections/yifanzhang114/slime-665bcb2d0d71762b86fdbd2d'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a> <a href='https://huggingface.co/datasets/yifanzhang114/SMR'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Data-green'></a>
-
-</div>
-
 <p align="center">
     <img src="document/overall.png" width="100%" height="100%">
 </p>
 
-<font size=5><div align='center' >  [[📖 arXiv Paper](https://arxiv.org/pdf/2405.15232)] [[📊 Dataset](https://github.com/RainBowLuoCS/DEEM)] [[🏆 Models](https://github.com/RainBowLuoCS/DEEM)]  </div></font>
 DEEM is an exploration of using diffusion models as the eyes of multi-modal large language models, with the goal of eliminating potential biases in different visual encoders from a vision-centric perspective. We hope that DEEM can bring some thinking to the multimodal community, whether the unbiased diffusion model can replace the traditional visual encoder and become the second unified multimodal structure besides self-regression.
-
-## 🔥 Update
-
-- [07/21]🔥DEEM is coming! We release the [code](https://github.com/RainBowLuoCS/DEEM), [models](https://github.com/RainBowLuoCS/DEEM), and [data](https://github.com/RainBowLuoCS/DEEM) for DEEM!
-- [07/05]🔥DEEM is coming! We release the [paper](https://arxiv.org/abs/2405.15232) for DEEM!
 
 ## 👀 Contents
 
@@ -56,52 +20,22 @@ DEEM is an exploration of using diffusion models as the eyes of multi-modal larg
 - [Examples](#examples)
 - [Citation](#citation)
 
-
-## 📷 Setup
-
-Please follow the instructions below to install the required packages.
-
-
-1. Clone this repository
-
-```bash
-https://github.com/RainBowLuoCS/DEEM.git
-```
-
-2. Install Package
-
-```bash
-conda create -n deem python=3.10 -y
-conda activate deem
-cd DEEM
-pip install -r requirements.txt
-# install `MultiScaleDeformableAttention` module
-cd uni_interleaved/models/utils/ops
-python setup.py install
-```
-
-3. Download all pretrained model components from huggingface into the `assets/` directory by running the following commands:
-
-```bash
-python scripts/download_models.py
-```
-
 ## 🔍 Model
 
 Here are the pretrained weights on Stage 1 data only:
 
 | Model                        | Diffusion Model | Base LLM       | Vision Encoder | Pretrain Data | Download |
 | ---------------------------- | --------------- | -------------- | -------------- | ------------- | -------- |
-| MM-interleaved-7B (Baseline) | SD 2.1 🔥        | Vicuna-7B-v1.5 | ConvNext-B     | MMC4+LAION    | [ckpt]() |
-| DEEM-7B                      | SD 2.1          | Vicuna-7B-v1.5 | ConvNext-B🔥    | MMC4+LAION    | [ckpt]() |
-| (DEEM+MM-interleaved)-7B     | SD 2.1 🔥        | Vicuna-7B-v1.5 | ConvNext-B🔥    | MMC4+LAION    | [ckpt]() |
+| MM-interleaved-7B (Baseline) | SD 2.1 🔥        | Vicuna-7B-v1.5 | ConvNext-B     | MMC4+LAION    |  |
+| DEEM-7B                      | SD 2.1          | Vicuna-7B-v1.5 | ConvNext-B🔥    | MMC4+LAION    |  |
+| (DEEM+MM-interleaved)-7B     | SD 2.1 🔥        | Vicuna-7B-v1.5 | ConvNext-B🔥    | MMC4+LAION    |  |
 
 We provide all our fully finetuned models on Stage 2 and 3 data for DEEM:
 
 | Model         | Base LLM       | Vision Encoder | Finetuning Data       | Download |
 | ------------- | -------------- | -------------- | --------------------- | -------- |
-| DEEM-VQA 7B   | Vicuna-7B-v1.5 | ConvNext-B     | LLaVA-665k+VQA+COCO   | [ckpt]() |
-| DEEM-MASK 7B  | Vicuna-7B-v1.5 | ConvNext-B     | ReferCOCO+VG+PartData | [ckpt]() |
+| DEEM-VQA 7B   | Vicuna-7B-v1.5 | ConvNext-B     | LLaVA-665k+VQA+COCO   |  |
+| DEEM-MASK 7B  | Vicuna-7B-v1.5 | ConvNext-B     | ReferCOCO+VG+PartData |  |
 
 ## 💡 Preparation
 
@@ -331,18 +265,6 @@ We provide some examples in this section. More examples can be found in our pape
 
 - [ ] Release stage 3 mask-text sft  model weights
 
-## Citation
-
-If you find this repo useful for your research, please consider citing the paper
-
-```
-@article{luo2024deem,
-  title={Deem: Diffusion models serve as the eyes of large language models for image perception},
-  author={Luo, Run and Li, Yunshui and Chen, Longze and He, Wanwei and Lin, Ting-En and Liu, Ziqiang and Zhang, Lei and Song, Zikai and Xia, Xiaobo and Liu, Tongliang and others},
-  journal={arXiv preprint arXiv:2405.15232},
-  year={2024}
-}
-```
 
 ## Acknowledgement
 
