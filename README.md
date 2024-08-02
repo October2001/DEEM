@@ -10,16 +10,6 @@
 
 DEEM is an exploration of using diffusion models as the eyes of multi-modal large language models, with the goal of eliminating potential biases in different visual encoders from a vision-centric perspective. We hope that DEEM can bring some thinking to the multimodal community, whether the unbiased diffusion model can replace the traditional visual encoder and become the second unified multimodal structure besides self-regression.
 
-## 👀 Contents
-
-- [Setup](#Setup)
-- [Model](#model)
-- [Preparation](#preparation)
-- [Train](#train)
-- [Evaluation](#evaluation)
-- [Examples](#examples)
-- [Citation](#citation)
-
 ## 🔍 Model
 
 Here are the pretrained weights on Stage 1 data only:
@@ -208,7 +198,7 @@ DEEM training consists of three stages: (1) image-text alignment  pre-training; 
 
 DEEM is trained on 32 A100 GPUs with 80GB memory. To train on fewer GPUs, you can reduce the `per_device_train_batch_size` and increase the `gradient_accumulation_steps` accordingly. Always keep the global batch size the same: `per_device_train_batch_size` x `gradient_accumulation_steps` x `num_gpus`.
 
-Please make sure you download and organize the data following [Preparation](#preparation) before training and evaluation.
+Please make sure you download and organize the data following Preparation before training and evaluation.
 
 ```bash
 bash scripts/train.sh
