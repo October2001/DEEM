@@ -31,7 +31,7 @@ We provide all our fully finetuned models on Stage 2 and 3 data for DEEM:
 
 ### Dataset
 
-Please follow [MM-Interleaved](https://github.com/OpenGVLab/MM-Interleaved) , [LLaVA](https://github.com/haotian-liu/LLaVA) and [Osprey](https://github.com/CircleRadon/Osprey) to prepare the corresponding images and data.
+Please follow MM-Interleaved , LLaVA and Osprey to prepare the corresponding images and data.
 
 ### DEEM data structure
 
@@ -260,11 +260,11 @@ We provide some examples in this section. More examples can be found in our pape
 
 We would like to thank the following repos for their great work:
 
-- This work is built upon the[MM-Interleaved](https://github.com/OpenGVLab/MM-Interleaved)
-- This work utilizes LLMs from , [Vicuna](https://github.com/lm-sys/FastChat)
-- This work utilizes the great work from [OpenFlamingo](https://github.com/mlfoundations/open_flamingo), [transformers](https://github.com/huggingface/transformers), [diffusers](https://github.com/huggingface/diffusers), [LLaMA](https://github.com/facebookresearch/llama), [CLIP](https://github.com/openai/CLIP), [BLIP](https://github.com/salesforce/BLIP), [ViT-Adapter](https://github.com/czczup/ViT-Adapter) and [Osprey](https://github.com/CircleRadon/Osprey).
+- This work is built upon the MM-Interleaved
+- This work utilizes LLMs from , Vicuna
+- This work utilizes the great work from OpenFlamingo, transformers, diffusers, LLaMA, CLIP, BLIP, ViT-Adapter and Osprey.
 
 ## License
 
-This project is released under the [Apache 2.0 license](https://github.com/RainBowLuoCS/DEEM/blob/main/LICENSE). Parts of this project contain code and models from other sources, which are subject to their respective licenses.
+This project is released under the Apache 2.0 license. Parts of this project contain code and models from other sources, which are subject to their respective licenses.
 
